@@ -1,0 +1,20 @@
+class pow:
+   def pn(self,x,n):
+        if x==0 or x==1 or n==1:
+            return x
+        if x==-1:
+            if n%2==0:
+                return 1
+            else:
+                return -1
+        if n==0:
+            return 1
+        if n<0:
+            return 1/self.pn(x,-n)
+        var = self.pn(x,n//2)
+        if n%2 ==0:
+            return var*var
+        return var*var*x
+x=int(input("Enter base x:"))
+n=int(input("Enter its power n:"))
+print("x to the power n is:",pow().pn(x,n))
